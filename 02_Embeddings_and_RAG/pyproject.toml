@@ -16,3 +16,8 @@ dependencies = [
     "scikit-learn>=1.6.1",
     "scipy>=1.15.1",
 ]
+
+[dependency-groups]
+dev = [
+    "ipykernel>=6.29.5",
+]
