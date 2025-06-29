@@ -1,6 +1,12 @@
 import os
 from typing import List
 
+# Add this import for PDF support
+try:
+    import PyPDF2
+except ImportError:
+    PyPDF2 = None
+
 
 class TextFileLoader:
     def __init__(self, path: str, encoding: str = "utf-8"):
@@ -60,6 +66,50 @@ class CharacterTextSplitter:
         for text in texts:
             chunks.extend(self.split(text))
         return chunks
+
+
+class PDFFileLoader:
+    def __init__(self, path: str):
+        if PyPDF2 is None:
+            raise ImportError("PyPDF2 is required for PDF loading. Please install it with 'pip install PyPDF2'.")
+        self.path = path
+        self.documents = []
+
+    def load(self):
+        if os.path.isdir(self.path):
+            self.load_directory()
+        elif os.path.isfile(self.path) and self.path.lower().endswith(".pdf"):
+            self.load_file()
+        else:
+            raise ValueError("Provided path is neither a valid directory nor a .pdf file.")
+
+    def load_file(self):
+        with open(self.path, "rb") as f:
+            reader = PyPDF2.PdfReader(f)
+            text = ""
+            for page in reader.pages:
+                page_text = page.extract_text()
+                if page_text:
+                    text += page_text + "\n"
+            self.documents.append(text)
+
+    def load_directory(self):
+        for root, _, files in os.walk(self.path):
+            for file in files:
+                if file.lower().endswith(".pdf"):
+                    file_path = os.path.join(root, file)
+                    with open(file_path, "rb") as f:
+                        reader = PyPDF2.PdfReader(f)
+                        text = ""
+                        for page in reader.pages:
+                            page_text = page.extract_text()
+                            if page_text:
+                                text += page_text + "\n"
+                        self.documents.append(text)
+
+    def load_documents(self):
+        self.load()
+        return self.documents
 
 
 if __name__ == "__main__":
