@@ -1,19 +1,25 @@
-# Production Rag Post (04)
+🚀 Elements of Production-Grade RAG 🚀
 
-🚀 Exciting News! 🚀
+💡 Does Your RAG Need a State?
 
-"I just built and shipped ... ! (emojis)
+If your LLM use case requires non-sequential logic flows, you will want to reach for LangGraph. It combines the concepts from graph theory (Nodes and Edges) with a shared State that uses composable loops called "cycles." This powerful combination of abstractions built on top of LangChain means that multiple Agents can reliably follow complex flows.
 
-💡 Three Key Takeaways:
+LangSmith is easy to implement and incredibly powerful. It is table-stakes for an LLM-powered application and makes evaluating and trying new ideas intuitive. Definitely build your Golden Dataset and try the Prompt Playground to see immediate feedback on changes!
 
-1️⃣ (Lesson 1) (emojis)
+🎯 Three Key Takeaways:
 
-2️⃣ (Lesson 2) (emojis)
+✅ Fundamentals of good software engineering apply. Your knowledge is transferrable to building LLM systems!
+✅ LangGraph manages complex, non-linear scenarios that collectively maintain a shared state which is the single source of truth.
+✅ A feedback loop that continuously monitors and evaluates your app is absolutely required for production-ready apps.
 
-3️⃣ (Lesson 3) (emojis)
+🤔 Not Yet Learned:
 
-A promise of more to come
-    🙋🏻‍♀️ A question to encourage discussion
-    A request to connect regarding this topic
+1️⃣ Planning for and recovering from errors and failure.
+2️⃣ Human-in-the-Loop approval options and implementation.
+3️⃣ Managing trade-offs of cost, latency, quality.
 
-hashtag#AI-Makerspace hashtag#RAG hashtag#LangSmith hashtag#AI-Engineering hashtag#Eval
+Code walk-thru: [loom]
+
+AI Makerspace is teaching cutting-edge AI tools and techniques with a ton of knowledgable support for learners. Stay tuned for more practical AI Engineering tips!
+
+hashtag#AI-Makerspace hashtag#AI-Engineering hashtag#RAG hashtag#LangGraph hashtag#LangSmith hashtag#LangChain
