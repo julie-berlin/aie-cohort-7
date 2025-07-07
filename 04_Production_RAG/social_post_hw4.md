@@ -18,7 +18,7 @@ LangSmith is easy to implement and incredibly powerful. It is table-stakes for a
 2️⃣ Human-in-the-Loop approval options and implementation.
 3️⃣ Managing trade-offs of cost, latency, quality.
 
-Code walk-thru: [loom]
+Code walk-through: https://www.loom.com/share/d065003998f74b04a45f3827d9d354f0?sid=546d4c7e-c529-4ad2-bc0c-9063f721c158
 
 AI Makerspace is teaching cutting-edge AI tools and techniques with a ton of knowledgable support for learners. Stay tuned for more practical AI Engineering tips!
 
