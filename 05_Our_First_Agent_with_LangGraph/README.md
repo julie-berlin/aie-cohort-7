@@ -7,7 +7,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 5: Pre-Work](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438?source=copy_link#21dcd547af3d81f99ab1fc47bd985f58)| [Session 5: Agents](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438) | Coming soon! | [Session 5 Slides](https://www.canva.com/design/DAGsm6s70T0/L0ZR8DzmJLWeGetP5DcCTg/edit?utm_content=DAGsm6s70T0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 5 Assignment: Agents](https://forms.gle/6roSZPAk2c6HDSx67) | [AIE7 Feedback 7/8](https://forms.gle/m4pdbdyBKj1CP5cQ9)
+| [Session 5: Pre-Work](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438?source=copy_link#21dcd547af3d81f99ab1fc47bd985f58)| [Session 5: Agents](https://www.notion.so/Session-5-Agents-21dcd547af3d801280a6eb64c638b438) | [Recording!](https://us02web.zoom.us/rec/share/FdGaKx3GgN3DKK6-E7X4qiRjKFqbJXlyv6BRlXjDLwOFJAwCcGMSBHRjhwVO5jOj.9Jlld_-bkFLNJ0ll)  (.$bq?mJ7) | [Session 5 Slides](https://www.canva.com/design/DAGsm6s70T0/L0ZR8DzmJLWeGetP5DcCTg/edit?utm_content=DAGsm6s70T0&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 5 Assignment: Agents](https://forms.gle/6roSZPAk2c6HDSx67) | [AIE7 Feedback 7/8](https://forms.gle/m4pdbdyBKj1CP5cQ9)
 
 
 
