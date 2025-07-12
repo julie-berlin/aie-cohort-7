@@ -1,0 +1,15 @@
+[project]
+name = "05-our-first-agent-with-langgraph"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arxiv>=2.2.0",
+    "jupyter>=1.1.1",
+    "langchain-community>=0.3.27",
+    "langchain-openai>=0.3.27",
+    "langgraph>=0.5.1",
+    "langsmith>=0.4.4",
+    "tavily-python>=0.7.9",
+]
