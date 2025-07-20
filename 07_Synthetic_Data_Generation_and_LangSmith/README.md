@@ -25,7 +25,7 @@ In today's assignment, we'll be creating Synthetic Data, and using it to benchma
 
 The completed notebook!
 
-#### 🏗️ BONUS ACTIVITY (OPTIONAL):
+### 🚧 OPTIONAL: Advanced Build
 
 Reproduce the RAGAS Synthetic Data Generation Steps - but utilize a LangGraph Agent Graph, instead of the Knowledge Graph approach.
 
