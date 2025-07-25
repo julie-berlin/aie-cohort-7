@@ -8,7 +8,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 7: Pre-Work](https://www.notion.so/Session-7-Synthetic-Data-Generation-for-Evaluation-21dcd547af3d802bb7f8f0e78a27c305?source=copy_link#22dcd547af3d801b8dc3f5ba42a1d9ef)| [Session 7: Synthetic Data Generation for Evaluation](https://www.notion.so/Session-7-Synthetic-Data-Generation-for-Evaluation-21dcd547af3d802bb7f8f0e78a27c305) | Coming soon! | Coming soon! | You are here! | Coming soon! | Coming soon!
+| [Session 7: Pre-Work](https://www.notion.so/Session-7-Synthetic-Data-Generation-for-Evaluation-21dcd547af3d802bb7f8f0e78a27c305?source=copy_link#22dcd547af3d801b8dc3f5ba42a1d9ef)| [Session 7: Synthetic Data Generation for Evaluation](https://www.notion.so/Session-7-Synthetic-Data-Generation-for-Evaluation-21dcd547af3d802bb7f8f0e78a27c305) | [Recording!](https://us02web.zoom.us/rec/share/RM5avcq7LMzzR2SU71tyroZTX6tsum8of4DDaUP9-aHytkfUoc88dB-xc3fKHL7E.ORcLrKfGx-eShOK-)  (A?w04^mf) | [Session 7 Slides](https://www.canva.com/design/DAGtRNKCt9o/u4E-rNAb8isbrdefN8Sowg/edit?utm_content=DAGtRNKCt9o&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 7 Assignment: SDG](https://forms.gle/hd5UdWXhTPsrZrx19)| [AIE7 Feedback 7/15](https://forms.gle/FoJj6krEpwawxxU88)
 
 In today's assignment, we'll be creating Synthetic Data, and using it to benchmark (and improve) a LCEL RAG Chain.
 
