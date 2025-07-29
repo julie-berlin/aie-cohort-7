@@ -6,7 +6,7 @@
 ## <h1 align="center" id="heading">Advanced Retrieval with LangChain</h1>
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 9: Pre-Work](https://www.notion.so/Session-9-Advanced-Retrieval-Methods-for-RAG-21dcd547af3d8047ab18cdd9bd703e46?source=copy_link#234cd547af3d802a84bed66283ae143b)| [Session 9: Advanced Retrieval Methods for RAG](https://www.notion.so/Session-9-Advanced-Retrieval-Methods-for-RAG-21dcd547af3d8047ab18cdd9bd703e46) | Coming soon! | Coming soon! | You are here! |Coming soon! | Coming soon!
+| [Session 9: Pre-Work](https://www.notion.so/Session-9-Advanced-Retrieval-Methods-for-RAG-21dcd547af3d8047ab18cdd9bd703e46?source=copy_link#234cd547af3d802a84bed66283ae143b)| [Session 9: Advanced Retrieval Methods for RAG](https://www.notion.so/Session-9-Advanced-Retrieval-Methods-for-RAG-21dcd547af3d8047ab18cdd9bd703e46) | [Recording!](https://us02web.zoom.us/rec/share/LoxWXzyD19Oavo_sJUC8_gFzFYqNGVAGEhSpHAE0251a6fnPH4tX-QdF5cARI4uq.bYjv2JKXw7M7jE7L) (U431Gq=*) | [Session 9 Slides](https://www.canva.com/design/DAGt7birMrE/xofe86QfWt4MkojfQrzVNA/edit?utm_content=DAGt7birMrE&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 9 assignment: Advanced Retrieval](https://forms.gle/wGke52G33yohbekG9) | [AIE7 Feedback 7/22](https://forms.gle/xQv6J8pbVXbSCqk87) |
 
 
 ### Steps to Run:
