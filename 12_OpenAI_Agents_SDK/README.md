@@ -8,7 +8,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 12: Pre-Work](https://www.notion.so/Session-12-OpenAI-Agents-SDK-21dcd547af3d8004b688f8130020bc53?source=copy_link#21dcd547af3d813aba0afc32fdcfac54)| [Session 12: OpenAI Agents SDK](https://www.notion.so/Session-12-OpenAI-Agents-SDK-21dcd547af3d8004b688f8130020bc53) | Coming soon! | Coming soon! | You are here! |Coming soon! | Coming soon!
+| [Session 12: Pre-Work](https://www.notion.so/Session-12-OpenAI-Agents-SDK-21dcd547af3d8004b688f8130020bc53?source=copy_link#21dcd547af3d813aba0afc32fdcfac54)| [Session 12: OpenAI Agents SDK](https://www.notion.so/Session-12-OpenAI-Agents-SDK-21dcd547af3d8004b688f8130020bc53) | [Recording!](https://us02web.zoom.us/rec/share/F82BL8vCwrQ0pJ4XEE4fLZtEVQg9-cg5uGKr7cMKyVcG4rgAOBWyFx7nKwRY8qkh.k-6EvV8pPTDn6K1I) (+?t?HkV3) | [Session 12 Slides](https://www.canva.com/design/DAGuxZD5yq8/_c7wu-MOgk0uXoFVG3f8Ng/edit?utm_content=DAGuxZD5yq8&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [(Optional) Session 12 Assignment: Agents SDK](https://forms.gle/Q7Sy2Njmp9Y932jt9) | [AIE7 Feedback 73/1](https://forms.gle/xZVgtk8drXA9iULQ6)
 
 In today's assignment, we'll be fine-tuning embeddings!
 
