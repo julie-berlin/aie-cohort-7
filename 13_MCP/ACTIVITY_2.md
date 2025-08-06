@@ -1,5 +1,7 @@
 ## 🏗️ Activity #2: MCP Client/Server Integration Approaches
 
+See [this repository](https://github.com/julie-berlin/pub-aie7-mcp-session) for the local MCP server implementation.
+
 ### Method 1: LangChain MCP Adapters
 
 See `method_one.py`
