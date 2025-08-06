@@ -1,0 +1,11 @@
+[project]
+name = "s13-mcp-client"
+version = "0.1.0"
+dependencies = [
+    "langchain>=0.3.27",
+    "langchain-mcp-adapters>=0.1.9",
+    "langchain-openai>=0.3.28",
+    "langgraph>=0.6.3",
+    "python-dotenv>=1.1.1",
+    "tavily-python>=0.7.10",
+]
