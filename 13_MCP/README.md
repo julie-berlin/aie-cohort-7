@@ -9,7 +9,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-
+| [Session 13: Pre-Work](https://www.notion.so/Session-13-Model-Context-Protocol-21dcd547af3d8098a3dac429f497fc7e?source=copy_link#246cd547af3d802b9dc4eeeed0258530)| [Session 13: MCP](https://www.notion.so/Session-13-Model-Context-Protocol-21dcd547af3d8098a3dac429f497fc7e) | [Recording!](https://us02web.zoom.us/rec/share/46vVCo41EMXBTyG8_Td_Z1o-AoiAZNI2xsM9m8QJie4z3xkbNSNN3LvaOTRzqp0d.IQceRLjpIqBUvmUE) ($u5Ck!XE) | [Session 13 Slides]() | You are here! | [Session 13 Assignment: MCP](https://forms.gle/4YubRsq4PE94f42bA) | [AIE7 Feedback8/5](https://forms.gle/FPpihp8fPubWE56UA)
 
 # Build 🏗️
 
