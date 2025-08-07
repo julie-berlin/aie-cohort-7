@@ -1,0 +1,21 @@
+[project]
+name = "14-langserve"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "arxiv>=2.2.0",
+    "langchain-community>=0.3.8",
+    "langchain-core>=0.3.14",
+    "langchain-openai>=0.2.8",
+    "langchain-text-splitters>=0.3.2",
+    "langgraph>=0.2.60",
+    "langgraph-cli[inmem]>=0.3.6",
+    "langgraph-sdk>=0.1.38",
+    "langsmith>=0.2.7",
+    "pymupdf>=1.24.10",
+    "python-dotenv>=1.0.1",
+    "qdrant-client>=1.8.0",
+    "tiktoken>=0.7.0",
+]
