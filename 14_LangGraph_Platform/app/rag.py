@@ -10,10 +10,12 @@ This module builds an in-memory RAG pipeline that:
 from __future__ import annotations
 
 import os
+import tiktoken
+
 from functools import lru_cache
 from typing import Annotated, List
+from typing_extensions import TypedDict
 
-import tiktoken
 from langchain_community.document_loaders import DirectoryLoader, PyMuPDFLoader
 from langchain_community.vectorstores import Qdrant
 from langchain_core.documents import Document
@@ -23,7 +25,7 @@ from langchain_core.tools import tool
 from langchain_openai import ChatOpenAI
 from langchain_openai.embeddings import OpenAIEmbeddings
 from langgraph.graph import START, StateGraph
-from typing_extensions import TypedDict
+
 
 
 def _tiktoken_len(text: str) -> int:
@@ -123,5 +125,3 @@ def retrieve_information(
     if isinstance(result, dict) and "response" in result:
         return result["response"]
     return result
-
-

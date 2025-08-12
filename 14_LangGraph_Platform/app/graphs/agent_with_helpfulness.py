@@ -44,7 +44,7 @@ def helpfulness_node(state: AgentState) -> Dict[str, Any]:
     """Evaluate helpfulness of the latest response relative to the initial query."""
     # If we've exceeded loop limit, short-circuit with END decision marker
     if len(state["messages"]) > 10:
-        return {"messages": [AIMessage(content="HELPFULNESS:END")]}    
+        return {"messages": [AIMessage(content="HELPFULNESS:END")]}
 
     initial_query = state["messages"][0]
     final_response = state["messages"][-1]
@@ -110,6 +110,5 @@ def build_graph():
     return graph
 
 
+# Export compiled graph for LangGraph Platform
 graph = build_graph().compile()
-
-
