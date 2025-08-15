@@ -1,0 +1,1 @@
+[{"type": "HumanMessage", "content": "Roll 2d6"}, {"type": "AIMessage", "content": ""}, {"type": "ToolMessage", "content": "ROLLS: 3, 1 -> RETURNS: 4"}, {"type": "AIMessage", "content": "You rolled 2d6 and got: 3 and 1, for a total of 4."}]

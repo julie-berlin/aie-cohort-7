@@ -1,0 +1,7 @@
+Retriever,Context Recall,LLM Precision,Non-LLM Precision,Prompt Tokens,Output Tokens,P50 Latency,Cost
+BM25,0.7659,0.8307,0.6058,"191,327","13,238",15s 950ms,$0.09
+Ensemble,0.9444,0.7796,0.6120,"783,069","43,998",3m 24s 960ms,$0.34
+Multi-Query,0.9167,0.7837,0.4588,"530,502","32,201",2m 33s 580ms,$0.23
+Naive,0.8452,0.7364,0.5369,"371,961","23,633",1m 2s 970ms,$0.14
+Parent-Document,0.6825,0.8399,0.4153,"182,662","12,585",16s 970ms,$0.07
+Reranker,0.7341,0.9444,0.6230,"139,389","11,154",22s 910ms,$0.06
