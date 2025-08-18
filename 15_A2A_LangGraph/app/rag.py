@@ -68,7 +68,7 @@ def _build_rag_graph(data_dir: str):
         )
 
     text_splitter = RecursiveCharacterTextSplitter(
-        chunk_size=750, chunk_overlap=0, length_function=_tiktoken_len
+        chunk_size=750, chunk_overlap=100, length_function=_tiktoken_len # changed
     )
     chunks = text_splitter.split_documents(documents) if documents else []
 
@@ -82,8 +82,8 @@ def _build_rag_graph(data_dir: str):
     # Prompt and model
     human_template = (
         "\n#CONTEXT:\n{context}\n\nQUERY:\n{query}\n\n"
-        "Use the provide context to answer the provided user query. "
-        "Only use the provided context to answer the query. If you do not know the answer, or it's not contained in the provided context respond with \"I don't know\""
+        "Use the provide context to answer the provided user query. Only use the provided context to answer the query. "
+        "If you do not know the answer, or it's not contained in the provided context respond with \"I don't know\""
     )
     chat_prompt = ChatPromptTemplate.from_messages([("human", human_template)])
     generator_llm = ChatOpenAI(model=os.environ.get("OPENAI_CHAT_MODEL", "gpt-4.1-nano"))
@@ -116,7 +116,7 @@ def _get_rag_graph():
 def retrieve_information(
     query: Annotated[str, "query to ask the retrieve information tool"]
 ):
-    """Use Retrieval Augmented Generation to retrieve information about student loan policies"""
+    """Use Retrieval Augmented Generation to retrieve documents related to business leadership skills"""
     graph = _get_rag_graph()
     result = graph.invoke({"question": query})
     # Prefer returning the response string if available
