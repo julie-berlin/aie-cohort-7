@@ -9,7 +9,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 16: Pre-Work](https://www.notion.so/Session-16-Guardrails-and-Caching-24ecd547af3d8096a41ad50908e4680e?source=copy_link#24ecd547af3d8181a0a3cf1182096983)| [Session 16: Guardrails and Caching](https://www.notion.so/Session-16-Guardrails-and-Caching-24ecd547af3d8096a41ad50908e4680e) | Coming soon! | Coming soon! | You are here! |Coming soon! | Coming soon!
+| [Session 16: Pre-Work](https://www.notion.so/Session-16-Guardrails-and-Caching-24ecd547af3d8096a41ad50908e4680e?source=copy_link#24ecd547af3d8181a0a3cf1182096983)| [Session 16: Guardrails and Caching](https://www.notion.so/Session-16-Guardrails-and-Caching-24ecd547af3d8096a41ad50908e4680e) | [Recording!](https://us02web.zoom.us/rec/share/FvwwIxAOfnhHakLdTwVNrvga6lDk1hslp13SzVWxlseGA-LBv3mWTeXBzrQ5EUmn.DJUzMMZci0ZAocLl) (6dbE5%1W)| [Session 16 Slides](https://www.canva.com/design/DAGwFTcRpeI/8rXGxPxvkfTXosIPZFJNAQ/edit?utm_content=DAGwFTcRpeI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 16 Assignment: Production RAG and Guardrails](https://forms.gle/C5zfhdZJdVkrZMJG9) | [AIE7 Feedback 8/14](https://forms.gle/9LrV7pAxZ3vpU7B98)
 
 # Build 🏗️
 
