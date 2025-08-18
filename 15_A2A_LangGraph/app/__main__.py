@@ -59,19 +59,19 @@ def main(host, port):
                 name='Academic Paper Search',
                 description='Search for academic papers on arXiv',
                 tags=['research', 'papers', 'academic'],
-                examples=['Find recent papers on large language models'],
+                examples=['Find recent papers on large language models.'],
             ),
             AgentSkill(
                 id='rag_search',
                 name='Document Retrieval',
-                description='Search through loaded documents for specific information',
+                description='A body of documents on business leadership principles and skills',
                 tags=['documents', 'rag', 'retrieval'],
-                examples=['What do the policy documents say about student loans?'],
+                examples=['List the top 5 leadership skills and the importance of each.'],
             ),
         ]
         agent_card = AgentCard(
             name='General Purpose Agent',
-            description='A helpful AI assistant with web search, academic paper search, and document retrieval capabilities',
+            description='A helpful AI assistant with web search, academic paper search, and business leadership document retrieval capabilities',
             url=f'http://{host}:{port}/',
             version='1.0.0',
             default_input_modes=Agent.SUPPORTED_CONTENT_TYPES,

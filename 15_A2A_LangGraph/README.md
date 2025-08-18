@@ -1,4 +1,4 @@
-<p align = "center" draggable="false" ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719" 
+<p align = "center" draggable="false" ><img src="https://github.com/AI-Maker-Space/LLM-Dev-101/assets/37101144/d1343317-fa2f-41e1-8af1-1dbb18399719"
      width="200px"
      height="auto"/>
 </p>
@@ -31,7 +31,7 @@ graph TD
     C -->|"No"| E["🎯 Helpfulness Node<br/>(A2A Evaluation)"]
     D --> F["🔧 Execute Tools"]
     F --> G["📊 Tavily Search<br/>(Web Results)"]
-    F --> H["📚 ArXiv Search<br/>(Academic Papers)"]  
+    F --> H["📚 ArXiv Search<br/>(Academic Papers)"]
     F --> I["📄 RAG Retrieval<br/>(Document Search)"]
     G --> B
     H --> B
@@ -41,7 +41,7 @@ graph TD
     J -->|"No (N)"| L{"🔄 Loop Count<br/>< 10?"}
     L -->|"Yes"| B
     L -->|"No"| K
-    
+
     style A fill:#1e3a5f,stroke:#ffffff,stroke-width:3px,color:#ffffff
     style B fill:#4a148c,stroke:#ffffff,stroke-width:3px,color:#ffffff
     style C fill:#0d47a1,stroke:#ffffff,stroke-width:3px,color:#ffffff
@@ -73,7 +73,7 @@ uv run python -m app
 ```
 
 ```bash
-# Test the A2A Serer
+# Test the A2A Server
 uv run python app/test_client.py
 ```
 
@@ -81,15 +81,57 @@ uv run python app/test_client.py
 
 Build a LangGraph Graph to "use" your application.
 
-Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node above through the A2A protocol. 
+Do this by creating a Simple Agent that can make API calls to the 🤖Agent Node above through the A2A protocol.
+
+##### ✅ Answer:
+
+See `langgraph_a2a_client.py` which implements a simple agent that invokes queries about Business Leadership and uses the responses to formulate advice for interviews.
+
+```bash
+uv run python3 app/simple_langgraph_a2a.py
+```
 
 ### ❓ Question #1:
 
 What are the core components of an `AgentCard`?
 
+##### ✅ Answer:
+
+The basic information on an AgentCard provides the "who, what, where, and how" for comminicating with the agent.
+
+The "who" is identifying info:
+
+- `name`, `description`, `version` - information that helps identify the agent
+
+The "what" - what tasks can this agent perform?
+
+- `skills` - these are the things that an agent can do to help the user that a client agent is acting on behalf of. These each have their own descriptions, id, tags and name.
+
+The "where":
+
+- `url`- endpoint to reach the service
+
+The "how" to communicate and interact:
+
+- `authentication` - methods to securely connect
+- `capabilities` - communication protocols such as streaming, push, state transition history
+- `defaultInputModes`/ `defaultOutputModes` - data modalities (text, image, HTML, audio, etc.)
+
+Sources:
+
+- [a2a-protocol.org](https://a2a-protocol.org/dev/tutorials/python/3-agent-skills-and-card/)
+- [a2aprotocol.net](https://www.a2aprotocol.net/)
+
+
 ### ❓ Question #2:
 
 Why is A2A (and other such protocols) important in your own words?
+
+##### ✅ Answer:
+
+A unified A2A protocol standard benefits the entire agent ecosystem. When providers adopt the same communication standard, interoperability becomes the default, while competing standards fragment the market and force developers to choose sides. The A2A protocol enables five key capabilities: interoperability, reliability, decentralization, coordination, security, and scalability. These technical foundations are essential for a thriving multi-agent environment.
+
+Most importantly, standardization levels the playing field. Developers can focus on building superior agents rather than competing on proprietary protocols. This drives healthy competition and collaboration, creating a rich ecosystem of specialized agents that work together seamlessly. The result: developers innovate on capabilities rather than infrastructure, while users gain access to diverse, interoperable agents without vendor lock-in.
 
 ### 🚧 Advanced Build:
 
@@ -98,7 +140,7 @@ Why is A2A (and other such protocols) important in your own words?
 
 Use a different Agent Framework to **test** your application.
 
-Do this by creating a Simple Agent that acts as different personas with different goals and have that Agent use your Agent through A2A. 
+Do this by creating a Simple Agent that acts as different personas with different goals and have that Agent use your Agent through A2A.
 
 Example:
 
