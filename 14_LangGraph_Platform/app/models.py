@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import os
 from typing import Any
-
 from langchain_openai import ChatOpenAI
 
 
@@ -22,5 +21,3 @@ def get_chat_model(model_name: str | None = None, *, temperature: float = 0) -> 
     """
     name = model_name or os.environ.get("OPENAI_MODEL", "gpt-4.1-nano")
     return ChatOpenAI(model=name, temperature=temperature)
-
-

@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Retriever Algorithm Scoring Calculator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        .weights-section {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border: 2px solid #e2e8f0;
+        }
+        .weights-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .weight-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .weight-label {
+            font-weight: 600;
+            color: #2d3748;
+            flex: 1;
+        }
+        .weight-input {
+            width: 80px;
+            padding: 8px 12px;
+            border: 2px solid #cbd5e0;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 600;
+            transition: border-color 0.2s;
+        }
+        .weight-input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        .results-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 14px;
+        }
+        .results-table th,
+        .results-table td {
+            padding: 12px 8px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        .results-table th {
+            background: #667eea;
+            color: white;
+            font-weight: 600;
+            position: sticky;
+            top: 0;
+        }
+        .results-table tr:hover {
+            background: #f7fafc;
+        }
+        .rank-1 { background: #d4edda !important; }
+        .rank-2 { background: #fff3cd !important; }
+        .rank-3 { background: #f8d7da !important; }
+        .score-column {
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .formula-section {
+            background: #2d3748;
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+        }
+        .preset-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+        .preset-btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            background: #667eea;
+            color: white;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 600;
+        }
+        .preset-btn:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        .metric-explanation {
+            font-size: 12px;
+            color: #718096;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎯 Retriever Algorithm Scorer</h1>
+        
+        <div class="weights-section">
+            <h2>📊 Metric Weights (adjust based on your priorities)</h2>
+            <div class="weights-grid">
+                <div class="weight-item">
+                    <span class="weight-label">Context Recall</span>
+                    <input type="number" class="weight-input" id="recall-weight" value="25" step="1" min="0" max="100">
+                </div>
+                <div class="weight-item">
+                    <span class="weight-label">LLM Precision</span>
+                    <input type="number" class="weight-input" id="llm-precision-weight" value="20" step="1" min="0" max="100">
+                </div>
+                <div class="weight-item">
+                    <span class="weight-label">Non-LLM Precision</span>
+                    <input type="number" class="weight-input" id="nonllm-precision-weight" value="15" step="1" min="0" max="100">
+                </div>
+                <div class="weight-item">
+                    <span class="weight-label">Cost Efficiency</span>
+                    <input type="number" class="weight-input" id="cost-weight" value="20" step="1" min="0" max="100">
+                </div>
+                <div class="weight-item">
+                    <span class="weight-label">Speed</span>
+                    <input type="number" class="weight-input" id="latency-weight" value="15" step="1" min="0" max="100">
+                </div>
+                <div class="weight-item">
+                    <span class="weight-label">Token Efficiency</span>
+                    <input type="number" class="weight-input" id="token-weight" value="5" step="1" min="0" max="100">
+                </div>
+            </div>
+            
+            <div class="preset-buttons">
+                <button class="preset-btn" onclick="setPreset('accuracy')">🎯 Accuracy First</button>
+                <button class="preset-btn" onclick="setPreset('speed')">⚡ Speed First</button>
+                <button class="preset-btn" onclick="setPreset('cost')">💰 Cost First</button>
+                <button class="preset-btn" onclick="setPreset('balanced')">⚖️ Balanced</button>
+            </div>
+            
+            <div class="metric-explanation">
+                💡 Higher scores = better performance. Cost and latency are inverted (lower is better). 
+                Token efficiency combines prompt and output token usage.
+            </div>
+        </div>
+        
+        <div class="results-section">
+            <h2>🏆 Algorithm Rankings</h2>
+            <table class="results-table" id="results-table">
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Algorithm</th>
+                        <th>Final Score</th>
+                        <th>Context Recall</th>
+                        <th>LLM Precision</th>
+                        <th>Non-LLM Precision</th>
+                        <th>Cost Score</th>
+                        <th>Speed Score</th>
+                        <th>Token Score</th>
+                    </tr>
+                </thead>
+                <tbody id="results-body">
+                </tbody>
+            </table>
+            
+            <div class="formula-section">
+                <h3>📐 Scoring Formula</h3>
+                <div id="formula-display"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Raw data from the table
+        const algorithms = {
+            'BM25': {
+                contextRecall: 0.7659,
+                llmPrecision: 0.8307,
+                nonLlmPrecision: 0.6058,
+                promptTokens: 191327,
+                outputTokens: 13238,
+                latencyMs: 15950,
+                cost: 0.09
+            },
+            'Ensemble': {
+                contextRecall: 0.9444,
+                llmPrecision: 0.7796,
+                nonLlmPrecision: 0.6120,
+                promptTokens: 783069,
+                outputTokens: 43998,
+                latencyMs: 204960,
+                cost: 0.34
+            },
+            'Multi-Query': {
+                contextRecall: 0.9167,
+                llmPrecision: 0.7837,
+                nonLlmPrecision: 0.4588,
+                promptTokens: 530502,
+                outputTokens: 32201,
+                latencyMs: 153580,
+                cost: 0.23
+            },
+            'Naive': {
+                contextRecall: 0.8452,
+                llmPrecision: 0.7364,
+                nonLlmPrecision: 0.5369,
+                promptTokens: 371961,
+                outputTokens: 23633,
+                latencyMs: 62970,
+                cost: 0.14
+            },
+            'Parent-Document': {
+                contextRecall: 0.6825,
+                llmPrecision: 0.8399,
+                nonLlmPrecision: 0.4153,
+                promptTokens: 182662,
+                outputTokens: 12585,
+                latencyMs: 16970,
+                cost: 0.07
+            },
+            'Reranker': {
+                contextRecall: 0.7341,
+                llmPrecision: 0.9444,
+                nonLlmPrecision: 0.6230,
+                promptTokens: 139389,
+                outputTokens: 11154,
+                latencyMs: 22910,
+                cost: 0.06
+            }
+        };
+
+        function normalizeMetrics() {
+            const algNames = Object.keys(algorithms);
+            
+            // Find min/max values for normalization
+            const metrics = {
+                contextRecall: algNames.map(name => algorithms[name].contextRecall),
+                llmPrecision: algNames.map(name => algorithms[name].llmPrecision),
+                nonLlmPrecision: algNames.map(name => algorithms[name].nonLlmPrecision),
+                totalTokens: algNames.map(name => algorithms[name].promptTokens + algorithms[name].outputTokens),
+                latencyMs: algNames.map(name => algorithms[name].latencyMs),
+                cost: algNames.map(name => algorithms[name].cost)
+            };
+
+            const ranges = {};
+            Object.keys(metrics).forEach(key => {
+                ranges[key] = {
+                    min: Math.min(...metrics[key]),
+                    max: Math.max(...metrics[key])
+                };
+            });
+
+            return ranges;
+        }
+
+        function calculateScores() {
+            const weights = {
+                recall: parseFloat(document.getElementById('recall-weight').value) || 0,
+                llmPrecision: parseFloat(document.getElementById('llm-precision-weight').value) || 0,
+                nonLlmPrecision: parseFloat(document.getElementById('nonllm-precision-weight').value) || 0,
+                cost: parseFloat(document.getElementById('cost-weight').value) || 0,
+                latency: parseFloat(document.getElementById('latency-weight').value) || 0,
+                token: parseFloat(document.getElementById('token-weight').value) || 0
+            };
+
+            const ranges = normalizeMetrics();
+            const results = [];
+
+            Object.keys(algorithms).forEach(name => {
+                const alg = algorithms[name];
+                
+                // Normalize metrics (0-100 scale)
+                const recallScore = ((alg.contextRecall - ranges.contextRecall.min) / (ranges.contextRecall.max - ranges.contextRecall.min)) * 100;
+                const llmPrecisionScore = ((alg.llmPrecision - ranges.llmPrecision.min) / (ranges.llmPrecision.max - ranges.llmPrecision.min)) * 100;
+                const nonLlmPrecisionScore = ((alg.nonLlmPrecision - ranges.nonLlmPrecision.min) / (ranges.nonLlmPrecision.max - ranges.nonLlmPrecision.min)) * 100;
+                
+                // For cost and latency, lower is better, so invert the scale
+                const costScore = ((ranges.cost.max - alg.cost) / (ranges.cost.max - ranges.cost.min)) * 100;
+                const speedScore = ((ranges.latencyMs.max - alg.latencyMs) / (ranges.latencyMs.max - ranges.latencyMs.min)) * 100;
+                
+                // Token efficiency (lower total tokens is better)
+                const totalTokens = alg.promptTokens + alg.outputTokens;
+                const tokenScore = ((ranges.totalTokens.max - totalTokens) / (ranges.totalTokens.max - ranges.totalTokens.min)) * 100;
+
+                // Calculate weighted final score
+                const finalScore = (
+                    (recallScore * weights.recall) +
+                    (llmPrecisionScore * weights.llmPrecision) +
+                    (nonLlmPrecisionScore * weights.nonLlmPrecision) +
+                    (costScore * weights.cost) +
+                    (speedScore * weights.latency) +
+                    (tokenScore * weights.token)
+                ) / (weights.recall + weights.llmPrecision + weights.nonLlmPrecision + weights.cost + weights.latency + weights.token);
+
+                results.push({
+                    name,
+                    finalScore: finalScore || 0,
+                    recallScore,
+                    llmPrecisionScore,
+                    nonLlmPrecisionScore,
+                    costScore,
+                    speedScore,
+                    tokenScore
+                });
+            });
+
+            // Sort by final score (descending)
+            results.sort((a, b) => b.finalScore - a.finalScore);
+            
+            return results;
+        }
+
+        function updateResults() {
+            const results = calculateScores();
+            const tbody = document.getElementById('results-body');
+            tbody.innerHTML = '';
+
+            results.forEach((result, index) => {
+                const row = document.createElement('tr');
+                let rankClass = '';
+                if (index === 0) rankClass = 'rank-1';
+                else if (index === 1) rankClass = 'rank-2';
+                else if (index === 2) rankClass = 'rank-3';
+                
+                row.className = rankClass;
+                row.innerHTML = `
+                    <td><strong>${index + 1}</strong></td>
+                    <td><strong>${result.name}</strong></td>
+                    <td class="score-column">${result.finalScore.toFixed(1)}</td>
+                    <td>${result.recallScore.toFixed(1)}</td>
+                    <td>${result.llmPrecisionScore.toFixed(1)}</td>
+                    <td>${result.nonLlmPrecisionScore.toFixed(1)}</td>
+                    <td>${result.costScore.toFixed(1)}</td>
+                    <td>${result.speedScore.toFixed(1)}</td>
+                    <td>${result.tokenScore.toFixed(1)}</td>
+                `;
+                tbody.appendChild(row);
+            });
+
+            updateFormulaDisplay();
+        }
+
+        function updateFormulaDisplay() {
+            const weights = {
+                recall: parseFloat(document.getElementById('recall-weight').value) || 0,
+                llmPrecision: parseFloat(document.getElementById('llm-precision-weight').value) || 0,
+                nonLlmPrecision: parseFloat(document.getElementById('nonllm-precision-weight').value) || 0,
+                cost: parseFloat(document.getElementById('cost-weight').value) || 0,
+                latency: parseFloat(document.getElementById('latency-weight').value) || 0,
+                token: parseFloat(document.getElementById('token-weight').value) || 0
+            };
+
+            const totalWeight = Object.values(weights).reduce((sum, w) => sum + w, 0);
+            
+            const formula = `
+Score = (
+    (${weights.recall}% × Context_Recall_Normalized) +
+    (${weights.llmPrecision}% × LLM_Precision_Normalized) +
+    (${weights.nonLlmPrecision}% × NonLLM_Precision_Normalized) +
+    (${weights.cost}% × Cost_Efficiency_Normalized) +
+    (${weights.latency}% × Speed_Normalized) +
+    (${weights.token}% × Token_Efficiency_Normalized)
+) ÷ ${totalWeight}%
+
+Where normalized scores are scaled 0-100 based on min/max values.
+Cost, Latency, and Token metrics are inverted (lower raw values = higher scores).
+            `;
+            
+            document.getElementById('formula-display').innerHTML = `<pre>${formula}</pre>`;
+        }
+
+        function setPreset(type) {
+            const presets = {
+                accuracy: { recall: 35, llmPrecision: 25, nonLlmPrecision: 20, cost: 5, latency: 10, token: 5 },
+                speed: { recall: 15, llmPrecision: 15, nonLlmPrecision: 10, cost: 15, latency: 35, token: 10 },
+                cost: { recall: 15, llmPrecision: 15, nonLlmPrecision: 10, cost: 40, latency: 10, token: 10 },
+                balanced: { recall: 25, llmPrecision: 20, nonLlmPrecision: 15, cost: 20, latency: 15, token: 5 }
+            };
+
+            const preset = presets[type];
+            document.getElementById('recall-weight').value = preset.recall;
+            document.getElementById('llm-precision-weight').value = preset.llmPrecision;
+            document.getElementById('nonllm-precision-weight').value = preset.nonLlmPrecision;
+            document.getElementById('cost-weight').value = preset.cost;
+            document.getElementById('latency-weight').value = preset.latency;
+            document.getElementById('token-weight').value = preset.token;
+            
+            updateResults();
+        }
+
+        // Add event listeners to all weight inputs
+        document.querySelectorAll('.weight-input').forEach(input => {
+            input.addEventListener('input', updateResults);
+        });
+
+        // Initialize
+        updateResults();
+    </script>
+</body>
+</html>
