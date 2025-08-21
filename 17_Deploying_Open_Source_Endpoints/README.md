@@ -8,7 +8,7 @@
 
 | 🤓 Pre-work | 📰 Session Sheet | ⏺️ Recording     | 🖼️ Slides        | 👨‍💻 Repo         | 📝 Homework      | 📁 Feedback       |
 |:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|:-----------------|
-| [Session 17: Pre-Work](https://www.notion.so/Session-17-Deploying-Open-Source-Endpoints-21dcd547af3d80cab64bfb49414d0d04?source=copy_link#21dcd547af3d812b8248c89b0978ed21)| [Session 17: Deploying Open-Source Endpoints](https://www.notion.so/Session-17-Deploying-Open-Source-Endpoints-21dcd547af3d80cab64bfb49414d0d04) | Coming soon! | Coming soon! | You are here! |Coming soon! | Coming soon!
+| [Session 17: Pre-Work](https://www.notion.so/Session-17-Deploying-Open-Source-Endpoints-21dcd547af3d80cab64bfb49414d0d04?source=copy_link#21dcd547af3d812b8248c89b0978ed21)| [Session 17: Deploying Open-Source Endpoints](https://www.notion.so/Session-17-Deploying-Open-Source-Endpoints-21dcd547af3d80cab64bfb49414d0d04) | [Recording!](https://us02web.zoom.us/rec/share/BI-8by_5gu5FF2zexPbZv6d8G4hKKYw5WyIERd0DimVvlX5Af2xgpjn8FfiEC1hj._wgeOfnO5Py3AsR0) (KywCL7E!) | [Session 17 Slides](https://www.canva.com/design/DAGwiAnp454/Mlye-0PSbLEaqz1l9VtTQA/edit?utm_content=DAGwiAnp454&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton) | You are here! | [Session 17 assignment: Deploying Open-Source Endpoints](https://forms.gle/evWG3FDvDp7Mj8DfA)| [AIE7 Feedback 8/19](https://forms.gle/rp3xmPvJmQ5rixrE7)
 
 **⚠️!!! PLEASE BE SURE TO SHUTDOWN YOUR DEDICATED ENDPOINT ON TOGETHER AI WHEN YOU'RE FINISHED YOUR ASSIGNMENT !!!⚠️**
 

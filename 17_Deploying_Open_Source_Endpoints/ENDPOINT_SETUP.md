@@ -1,5 +1,9 @@
 # Setting Up Your Open-Source Endpoint
 
+> NOTE: If you do not wish to purchase $50 of compute credits for T2 (for using dedicated endpoints) you can instead skip the following set-up and simply use the serverless endpoints offered at: 
+
+- `openai/gpt-oss-20b`
+
 ## Your Generator
 
 First, you'll want to navigate to [api.together.ai/models](https://api.together.ai/models), and search for the model we'll be using today: 
